@@ -1,0 +1,9 @@
+<div>
+  <input type="number" #element1>
+  <input type="number" #element2><br>
+  <input type="button" value="+" (click)="add(element1.value, element2.value)">
+  <input type="button" value="-" (click)="sub(element1.value, element2.value)">
+  <input type="button" value="*" (click)="mul(element1.value, element2.value)">
+  <input type="button" value="/" (click)="div(element1.value, element2.value)"><br>
+  Result:<span>{{result}}</span>
+</div>
