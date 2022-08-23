@@ -1,0 +1,67 @@
+<div class="container" >
+  <p style="color: blue">{{message}}</p>
+  <form [formGroup]="formRegister" (ngSubmit)="create()" >
+    <h2>Form Register</h2>
+
+    <table>
+      <tr>
+        <td>
+          <input type="email" formControlName="email" placeholder="Enter email">
+          <p *ngIf="!formRegister.get('email')?.valid" style="color: red">Không để trống và định dạng example@email.com</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="password" formControlName="password" placeholder="Enter password">
+          <p *ngIf="!formRegister.get('password')?.valid" style="color: red">Không để trống và tối thiểu chứa 6 ký tự</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+        <input type="password" formControlName="confirmPassword" placeholder="Enter confirm password">
+          <p *ngIf="!formRegister.get('confirmPassword')?.valid" style="color: red">Không để trống và tối thiểu chứa 6 ký tự và giống password</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+        <select formControlName="country">
+          <option disabled>Choose a country</option>
+          <option value="Vietnam">Vietnam</option>
+          <option value="Japan">Japan</option>
+          <option value="France">France</option>
+        </select>
+          <p *ngIf="!formRegister.get('country')?.valid" style="color: red">Không để trống và phải chọn 1 quốc gia</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="number" formControlName="age" placeholder="Enter age">
+          <p *ngIf="!formRegister.get('age')?.valid" style="color: red">Không để trống và lớn hơn 18 tuổi</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+        <input type="radio" formControlName="gender" id="Male"
+               value="Male" />
+        <label for="male">Male</label>
+        <input type="radio" formControlName="gender" id="Female"
+               value="Female" />
+        <label for="Female">Female</label>
+          <p *ngIf="!formRegister.get('gender')?.valid" style="color: red">Không để trống và phải chọn 1 giới tính</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="text" formControlName="phone" placeholder="Enter phone">
+          <p *ngIf="!formRegister.get('phone')?.valid" style="color: red">Không để trống và bắt đầu từ 0, sđt gồm 10 số</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+
