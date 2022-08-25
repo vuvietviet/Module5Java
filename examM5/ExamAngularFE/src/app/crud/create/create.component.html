@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<div class="container">
+
+  <h1>create-product form!</h1>
+  <form [formGroup]="formCreate" (ngSubmit)="create()">
+    <table>
+      <tr>
+        <td><input placeholder="nhập tên" formControlName="title" size="45" style="margin-bottom: 20px">
+          <p style="color: red" *ngIf="!formCreate.get('title')?.valid && formCreate.get('title')?.touched">Không để trống</p>
+        </td>
+      </tr>
+      <tr>
+        <td><input placeholder="nhập giá" formControlName="price" size="45" style="margin-bottom: 20px">
+          <p style="color: red" *ngIf="!formCreate.get('price')?.valid && formCreate.get('price')?.touched">Không để trống</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td><textarea placeholder="nhập mô tả" formControlName="description" cols="47" rows="3" style="margin-bottom: 20px"></textarea>
+          <p style="color: red" *ngIf="!formCreate.get('description')?.valid && formCreate.get('description')?.touched">Không để trống</p>
+
+        </td>
+      </tr>
+    </table>
+    <button type="submit" class="btn btn-primary" style="margin-right: 10px">Tạo</button>
+    <button class="btn btn-secondary" routerLink="/">Hủy</button>
+  </form>
+</div>
+

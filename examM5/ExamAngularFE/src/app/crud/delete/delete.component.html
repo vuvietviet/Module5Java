@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<div class="container">
+
+  <h1>Are you sure?</h1>
+  <form [formGroup]="formDelete" (ngSubmit)="delete(true)">
+    <table>
+      <tr>
+        <td><input placeholder="nhập tên" formControlName="title" readonly size="45" style="margin-bottom: 20px">
+          <p style="color: red" *ngIf="!formDelete.get('title')?.valid && formDelete.get('title')?.touched">Không để trống</p>
+        </td>
+      </tr>
+      <tr>
+        <td><input placeholder="nhập giá" formControlName="price" readonly size="45" style="margin-bottom: 20px">
+          <p style="color: red" *ngIf="!formDelete.get('price')?.valid && formDelete.get('price')?.touched">Không để trống</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td><textarea placeholder="nhập mô tả" formControlName="description" readonly cols="47" rows="3" style="margin-bottom: 20px"></textarea>
+          <p style="color: red" *ngIf="!formDelete.get('description')?.valid && formDelete.get('description')?.touched">Không để trống</p>
+
+        </td>
+      </tr>
+    </table>
+    <button type="submit" class="btn btn-danger" style="margin-right: 10px">Xoá</button>
+    <button class="btn btn-secondary" routerLink="/">Danh sách</button>
+  </form>
+</div>
+
