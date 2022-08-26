@@ -5,6 +5,10 @@
   <h2 align="center">Danh sách địa danh</h2>
   <p></p>
   <button type="button" class="btn btn-primary" routerLink="/create/tuor">Tạo</button>
+  <div style="float: right">
+    <input size="30" placeholder="Tìm kiếm..." style="margin-right: 10px" #search (input)="searchTour(search.value)">
+  </div>
+
   <p style="color: blue">
     {{message}}
   </p>
